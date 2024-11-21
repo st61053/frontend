@@ -8,7 +8,7 @@ import { QueryOperator } from '../../services/settings';
 
 const Dashboard = () => {
 
-    const { data: runners } = useGetRunnerListQuery({ query: [{ property: "state", operator: QueryOperator.EQ, value: "active" }] });
+    const { data: runners } = useGetRunnerListQuery({ limit: -1 });
     const { data: jobs } = useGetJobListQuery({ limit: -1 });
 
     const getJobsByRunnerGroupAndOrganization = (organization: string, runnerGroup: string) => {
